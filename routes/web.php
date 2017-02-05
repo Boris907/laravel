@@ -12,9 +12,10 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('posts');
+    //return view('welcome');
 });
-
+//
 Route::get('contacts','ContactsController@index');
 Route::get('contacts/test','ContactsController@test');
 Route::get('about-us','PagesController@aboutUs');
@@ -22,3 +23,10 @@ Route::get('about-us','PagesController@aboutUs');
 Route::get('tasks','TaskController@index');
 Route::get('tasks/addTask','TaskController@addTask');
 Route::get('tasks/{id}','TaskController@showTask');
+
+Route::get('/posts', 'PostsController@index');
+Route::get('/posts/create', 'PostsController@create');
+Route::post('/posts','PostsController@store');
+Route::get('/posts/{post}','PostsController@show');
+Route::delete('/posts/{post}','PostsController@destroy');
+

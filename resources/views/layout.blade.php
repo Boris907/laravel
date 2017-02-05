@@ -5,22 +5,19 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <title>Document</title>
 </head>
 <body>
-    <h1>We are learning laravel</h1>
-    <ul>
-        <li><a href="/contacts">Contacts</a></li>
-        <li><a href="/about-us">About us</a></li>
-        <li><a href="/tasks">Tasks</a></li>
-    </ul>
-    <br>
-        <div class = "content">
-            <hr>
-            @yield('content')
-            <hr>
-        </div>
-    <br>
-    <div>I am footer!</div>
+
+@include('menu')
+
+<div class="container">
+
+
+    @yield('content')
+
+</div><!-- /.container -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>
