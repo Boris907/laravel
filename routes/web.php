@@ -30,3 +30,5 @@ Route::post('/posts','PostsController@store');
 Route::get('/posts/{post}','PostsController@show');
 Route::delete('/posts/{post}','PostsController@destroy');
 
+Route::post('/posts/{post}/comments','CommentsController@store');
+
