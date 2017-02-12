@@ -1,7 +1,8 @@
 <nav class="navbar navbar-inverse">
     <div class="container">
         <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                    aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -15,6 +16,14 @@
                 <li><a href="/posts/create">Add post</a></li>
                 <li><a href="/tasks">Task</a></li>
                 <li><a href="/about-us">Contact</a></li>
+                @if(Auth::check())
+                    <li class="nav-link pull-right">
+                        <a class="" href="">{{Auth::user()->name}}</a>
+                    </li>
+                    <li class="nav-link pull-right">
+                        <a class="" href="/logout">Logout</a>
+                    </li>
+                @endif
             </ul>
         </div><!--/.nav-collapse -->
     </div>

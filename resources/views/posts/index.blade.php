@@ -6,7 +6,8 @@
     <div class="col-md-4">
         <h2>{{$post->title}}</h2>
         <p>{{$post->body}}</p>
-        <p>{{$post->created_at->toFormattedDateString()}}</p>
+        <p><strong>{{$post->user->name}}</strong> {{$post->created_at->toFormattedDateString()}}</p>
+
         <p><a class="btn btn-default" href="/posts/{{$post->alias}}" role="button">Читать далее</a></p>
         <form action="/posts/{{$post->alias}}" method="post">
             {{csrf_field()}}

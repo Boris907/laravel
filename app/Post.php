@@ -9,6 +9,8 @@ class Post extends Model
     //protected $fillable = ['title','alias','body'];
     protected $guarded=['status'];
 
+
+
     public function getRouteKeyName()
     {
         return 'alias';
@@ -23,7 +25,7 @@ class Post extends Model
     }
 
     public function addComment($body){
-        $this->comments()->create(compact('body'));
+        $this->comments()->create(['body'=>$body,'user_id'=>auth()->user()->id]);
     }
 
 }
