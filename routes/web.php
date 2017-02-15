@@ -36,5 +36,11 @@ Route::get('/register','RegistrationController@create');
 Route::post('/register','RegistrationController@store');
 
 Route::get('/login','SessionController@create');
+Route::post('/login','SessionController@store');
 Route::get('/logout','SessionController@destroy');
 
+//GET    /book            - get all books
+//GET    /book/3/page/25  - get book 3
+//PUT    /book            - create
+//POST   /book/1          - change book
+//DELETE /book/3
