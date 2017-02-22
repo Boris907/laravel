@@ -23,9 +23,9 @@
                     <li class="nav-link col-lg-push-12">
                         <a class="" href="/logout">Logout</a>
                     </li>
-                    @else
-                    <li class="nav-link"><a href="/login">Login</a></li>
-                    <li><a href="/register">Register</a></li>
+                @else
+                    <li class="nav-link col-lg-push-11"><a href="/login">Login</a></li>
+                    <li class="nav-link col-lg-push-12"><a href="/register">Register</a></li>
                 @endif
             </ul>
         </div><!--/.nav-collapse -->

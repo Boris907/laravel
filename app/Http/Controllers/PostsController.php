@@ -29,12 +29,21 @@ class PostsController extends Controller
             'alias' => 'required',
             'body' => 'required|max:255'
         ]);
-        Post::create([
+        $post = Post::create([
            'title'=>request('title'),
            'alias'=>request('alias'),
            'body'=>request('body'),
            'user_id'=>auth()->user()->id
         ]);
+
+        //request()->file('post_file')->storeAs('posts','post_image.jpg');
+        //$originName = request()->file('post_file')->getClientOriginalName();
+        $post->picture=request()->file('post_file')->getClientOriginalName();
+        request()->file('post_file')->storeAs('posts/'.$post->id,$post->picture);
+        $post->save();
+
+        session()->flash('message','Запись создана успешно!');
+        //session(['message','Запись создана успешно!']);  //-will seen all the time
 
         return redirect('/posts');
     }

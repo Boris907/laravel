@@ -2,6 +2,9 @@
 @section('content')
     <div class="col-md-12">
         <h2>{{$post->title}}</h2>
+        @if(isset($post->picture))
+            <img src="{{'/uploads/posts/'.$post->id.'/'.$post->picture}}">
+        @endif
         <p>{{$post->body}}</p>
     </div>
     <div class="col-md-12 comments">
